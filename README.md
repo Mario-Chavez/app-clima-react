@@ -21,8 +21,8 @@ Asegúrate de tener instalado lo siguiente en tu sistema:
 
 Sigue estos pasos para configurar el proyecto en tu entorno local:
 
-1. Clona el repositorio desde GitHub: `git clone https://github.com/Mario-Chavez/practico-react-api-ejercicio11.git`
-2. Navega al directorio del proyecto: `cd practico-react-api-ejercicio11`
+1. Clona el repositorio desde GitHub: `git clone https://github.com/Mario-Chavez/app-clima-react.git`
+2. Navega al directorio del proyecto: `cd app-clima-react`
 3. Instala las dependencias del proyecto: `npm install`
 
 ## ¡Visita mi sitio Aqui!
