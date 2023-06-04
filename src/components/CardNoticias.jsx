@@ -23,7 +23,7 @@ const CardNoticias = ({ clima }) => {
                                     Sensación térmica: {data.main.feels_like}°C
                                 </Card.Text>
                                 <Card.Text>Humedad: {data.main.humidity}%</Card.Text>
-                                <Card.Text>Presion: {data.main.pressure}</Card.Text>
+                                <Card.Text>Presion: {data.main.pressure} hPa</Card.Text>
                                 <Card.Text>
                                     Temperatura Max: {data.main.temp_max}°C
                                 </Card.Text>
@@ -31,17 +31,17 @@ const CardNoticias = ({ clima }) => {
                                     Temperatura Max: {data.main.temp_min}°C
                                 </Card.Text>
                                 <Card.Text>
-                                    Descripción: {data.weather[0].description}
+                                    <img
+                                        src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                                        alt="Weather Icon"
+                                    />
+                                    {data.weather[0].description}
                                 </Card.Text>
                                 <Card.Text>
                                     Velocidad del viento: {data.wind.speed} km/h
                                 </Card.Text>
                                 <Card.Text>Amanecer: {data.sys.sunset}</Card.Text>
                                 <Card.Text>Atardecer: {data.sys.sunrise}</Card.Text>
-                                <img
-                                    src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-                                    alt="Weather Icon"
-                                />
                             </Card.Body>
                         </Card>
                     ))}
