@@ -19,7 +19,7 @@ function App() {
         try {
             setIsLoading(true);
             const resp = await fetch(
-                `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&appid=${API_KEY} `
+                `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY} `
             );
             const dato = await resp.json();
             // console.log(dato.name);

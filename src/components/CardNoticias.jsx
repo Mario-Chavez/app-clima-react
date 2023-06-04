@@ -8,13 +8,6 @@ const CardNoticias = ({ clima }) => {
 
     return (
         <>
-            {/* <div className="card">
-                <h2>{name}</h2>
-                <p>Temperatura: {main.temp}°C</p>
-                <p>Sensación térmica: {main.feels_like}°C</p>
-                <p>Descripción: {weather[0].description}</p>
-                <p>Velocidad del viento: {wind.speed} km/h</p>
-            </div> */}
             {clima == undefined ? (
                 <div className="my-5 p-4 text-center">
                     <Spinner animation="border" role="status" variant="primary"></Spinner>
@@ -29,12 +22,26 @@ const CardNoticias = ({ clima }) => {
                                 <Card.Text>
                                     Sensación térmica: {data.main.feels_like}°C
                                 </Card.Text>
+                                <Card.Text>Humedad: {data.main.humidity}%</Card.Text>
+                                <Card.Text>Presion: {data.main.pressure}</Card.Text>
+                                <Card.Text>
+                                    Temperatura Max: {data.main.temp_max}°C
+                                </Card.Text>
+                                <Card.Text>
+                                    Temperatura Max: {data.main.temp_min}°C
+                                </Card.Text>
                                 <Card.Text>
                                     Descripción: {data.weather[0].description}
                                 </Card.Text>
                                 <Card.Text>
                                     Velocidad del viento: {data.wind.speed} km/h
                                 </Card.Text>
+                                <Card.Text>Amanecer: {data.sys.sunset}</Card.Text>
+                                <Card.Text>Atardecer: {data.sys.sunrise}</Card.Text>
+                                <img
+                                    src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                                    alt="Weather Icon"
+                                />
                             </Card.Body>
                         </Card>
                     ))}
