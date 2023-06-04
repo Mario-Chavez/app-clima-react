@@ -3,10 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Buscador from "./components/Buscador";
-// import CardNoticias from "./components/cardNoticias";
 import CardClima from "./components/CardClima.jsx";
 import TituloDeBusqueda from "./components/TituloDeBusqueda";
-import Mapa from "./components/Mapa";
 
 const API_KEY = "a6058a0ce883d6e4b27adc6b93e15e01";
 
@@ -22,7 +20,7 @@ function App() {
         try {
             setIsLoading(true);
             const resp = await fetch(
-                `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY} `
+                `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY} `
             );
             const dato = await resp.json();
             setLat(dato.coord.lat);
