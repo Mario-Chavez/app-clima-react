@@ -12,14 +12,11 @@ const Mapa = ({ lati, long }) => {
             container: mapContainerRef.current,
             style: "mapbox://styles/mapbox/streets-v11",
             center: [-74.5, 40],
-            zoom: 9,
+            zoom: 11,
         });
 
-        // Asegúrate de tener la latitud y longitud de la ciudad que deseas mostrar en el mapa
         const lat = lati;
         const lon = long;
-
-        // Centrar el mapa en la latitud y longitud de la ciudad
         map.setCenter([lon, lat]);
 
         return () => {

@@ -43,6 +43,10 @@ const CardClima = ({ clima, latitud, longitud }) => {
                                             </Card.Text>
                                             <Card.Text className="fw-bold">
                                                 {data.weather[0].description}
+                                                <img
+                                                    src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                                                    alt="Weather Icon"
+                                                />
                                             </Card.Text>
                                             <Card.Text className="fw-bold">
                                                 Velocidad del viento: {data.wind.speed}{" "}
