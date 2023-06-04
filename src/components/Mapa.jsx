@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 
-const Mapa = ({ ciudad, lati, long }) => {
+const Mapa = ({ lati, long }) => {
     const mapContainerRef = useRef(null);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const Mapa = ({ ciudad, lati, long }) => {
         return () => {
             map.remove();
         };
-    }, [ciudad]);
+    }, [lati]);
 
     return <div ref={mapContainerRef} style={{ width: "100%", height: "400px" }} />;
 };

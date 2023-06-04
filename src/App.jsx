@@ -15,7 +15,6 @@ function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [lat, setLat] = useState("");
     const [long, setLong] = useState("");
-    const [ciudad, setCiudad] = useState("");
 
     useEffect(() => {}, [clima]);
 
@@ -28,7 +27,6 @@ function App() {
             const dato = await resp.json();
             setLat(dato.coord.lat);
             setLong(dato.coord.lon);
-            setCiudad(dato.name);
             setClima([{ ...dato }]);
             setIsLoading(false);
         } catch (error) {
@@ -53,14 +51,7 @@ function App() {
                     </div>
                 ) : (
                     <section className="row justify-content-evenly mt-5">
-                        <CardClima clima={clima} />
-                        {ciudad ? (
-                            <div>
-                                <Mapa ciudad={ciudad} lati={lat} long={long} />
-                            </div>
-                        ) : (
-                            ""
-                        )}
+                        <CardClima clima={clima} latitud={lat} longitud={long} />
                     </section>
                 )}
             </Container>

@@ -1,8 +1,9 @@
-import React from "react";
-import { Card, Spinner } from "react-bootstrap";
+import React, { useState } from "react";
+import { Card, Spinner, Row, Col } from "react-bootstrap";
 import { ArrowRight } from "react-bootstrap-icons";
+import Mapa from "./Mapa";
 
-const CardClima = ({ clima }) => {
+const CardClima = ({ clima, latitud, longitud }) => {
     return (
         <>
             {clima == undefined ? (
@@ -12,33 +13,46 @@ const CardClima = ({ clima }) => {
             ) : (
                 <div>
                     {clima.map((data, index) => (
-                        <Card key={index}>
+                        <Card key={index} className="bg border-5 pb-5 ">
                             <Card.Body>
-                                <Card.Title>{data.name}</Card.Title>
-                                <Card.Text>Temperatura: {data.main.temp}°C</Card.Text>
-                                <Card.Text>
-                                    Sensación térmica: {data.main.feels_like}°C
-                                </Card.Text>
-                                <Card.Text>Humedad: {data.main.humidity}%</Card.Text>
-                                <Card.Text>Presion: {data.main.pressure} hPa</Card.Text>
-                                <Card.Text>
-                                    Temperatura Max: {data.main.temp_max}°C
-                                </Card.Text>
-                                <Card.Text>
-                                    Temperatura Max: {data.main.temp_min}°C
-                                </Card.Text>
-                                <Card.Text>
-                                    <img
-                                        src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-                                        alt="Weather Icon"
-                                    />
-                                    {data.weather[0].description}
-                                </Card.Text>
-                                <Card.Text>
-                                    Velocidad del viento: {data.wind.speed} km/h
-                                </Card.Text>
-                                <Card.Text>Amanecer: {data.sys.sunset}</Card.Text>
-                                <Card.Text>Atardecer: {data.sys.sunrise}</Card.Text>
+                                <Row>
+                                    <Col sm={12} xs={12} lg={4}>
+                                        <div>
+                                            <Card.Title>{data.name}</Card.Title>
+                                            <Card.Text>
+                                                Temperatura: {data.main.temp}°C
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Sensación térmica: {data.main.feels_like}
+                                                °C
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Humedad: {data.main.humidity}%
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Presion: {data.main.pressure} hPa
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Temperatura Max: {data.main.temp_max}°C
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Temperatura Max: {data.main.temp_min}°C
+                                            </Card.Text>
+                                            <Card.Text>
+                                                {data.weather[0].description}
+                                            </Card.Text>
+                                            <Card.Text>
+                                                Velocidad del viento: {data.wind.speed}{" "}
+                                                km/h
+                                            </Card.Text>
+                                        </div>
+                                    </Col>
+                                    <Col sm={12} xs={12} lg={8}>
+                                        <div>
+                                            <Mapa lati={latitud} long={longitud} />
+                                        </div>
+                                    </Col>
+                                </Row>
                             </Card.Body>
                         </Card>
                     ))}
