@@ -6,13 +6,16 @@ import Buscador from "./components/Buscador";
 // import CardNoticias from "./components/cardNoticias";
 import CardClima from "./components/CardClima.jsx";
 import TituloDeBusqueda from "./components/TituloDeBusqueda";
-// import Map from "./components/Map";
+import Mapa from "./components/Mapa";
 
 const API_KEY = "a6058a0ce883d6e4b27adc6b93e15e01";
 
 function App() {
     const [clima, setClima] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [lat, setLat] = useState("");
+    const [long, setLong] = useState("");
+    const [ciudad, setCiudad] = useState("");
 
     useEffect(() => {}, [clima]);
 
@@ -23,7 +26,9 @@ function App() {
                 `http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&lang=es&appid=${API_KEY} `
             );
             const dato = await resp.json();
-            // console.log(dato.name);
+            setLat(dato.coord.lat);
+            setLong(dato.coord.lon);
+            setCiudad(dato.name);
             setClima([{ ...dato }]);
             setIsLoading(false);
         } catch (error) {
@@ -49,10 +54,13 @@ function App() {
                 ) : (
                     <section className="row justify-content-evenly mt-5">
                         <CardClima clima={clima} />
-                        {/* <div>
-                            <h1>Mapa de {city}</h1>
-                            <Map ciudad={ciudad} lat={lat} long={long}/>
-                        </div> */}
+                        {ciudad ? (
+                            <div>
+                                <Mapa ciudad={ciudad} lati={lat} long={long} />
+                            </div>
+                        ) : (
+                            ""
+                        )}
                     </section>
                 )}
             </Container>

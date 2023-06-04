@@ -1,11 +1,8 @@
 import React from "react";
-import { Button, Card, Spinner } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 import { ArrowRight } from "react-bootstrap-icons";
-import foto from "../assets/Image_not_available.png";
 
 const CardClima = ({ clima }) => {
-    console.log(clima);
-
     return (
         <>
             {clima == undefined ? (

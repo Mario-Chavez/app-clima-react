@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 
-const Map = ({ ciudad, lat, long }) => {
+const Mapa = ({ ciudad, lati, long }) => {
     const mapContainerRef = useRef(null);
 
     useEffect(() => {
@@ -16,8 +16,8 @@ const Map = ({ ciudad, lat, long }) => {
         });
 
         // Asegúrate de tener la latitud y longitud de la ciudad que deseas mostrar en el mapa
-        const lat = 40.7128;
-        const lon = -74.006;
+        const lat = lati;
+        const lon = long;
 
         // Centrar el mapa en la latitud y longitud de la ciudad
         map.setCenter([lon, lat]);
@@ -30,4 +30,4 @@ const Map = ({ ciudad, lat, long }) => {
     return <div ref={mapContainerRef} style={{ width: "100%", height: "400px" }} />;
 };
 
-export default Map;
+export default Mapa;
