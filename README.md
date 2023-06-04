@@ -36,7 +36,7 @@ Las principales dependencias utilizadas en este proyecto son:
 
 ## ¡ Visita el sitio Aqui !
 
-[Noticias](https://noticias-con-react.netlify.app/)
+[App-Clima](https://ap-clima-reactjs-v1.netlify.app)
 
 ## Desarrollador
 
