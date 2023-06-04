@@ -21,9 +21,9 @@ const Buscador = ({ ciudades }) => {
                 onSubmit={handleSubmit(onSubmit)}
                 className="row row g-0 text-center pt-2"
             >
-                <div className="col-6 col-md-4">
+                <div className="col-6 col-md-4 col-sm-12 mx-auto">
                     <Form.Text>
-                        <h4>Buscar por Ciudades</h4>
+                        <h4>Buscar por Ciudad</h4>
                     </Form.Text>
                 </div>
                 <div className="col-sm-6 col-md-8">
