@@ -4,8 +4,9 @@ import { Container, Spinner } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import Buscador from "./components/Buscador";
 // import CardNoticias from "./components/cardNoticias";
-import CardNoticias from "./components/CardNoticias.jsx";
+import CardClima from "./components/CardClima.jsx";
 import TituloDeBusqueda from "./components/TituloDeBusqueda";
+// import Map from "./components/Map";
 
 const API_KEY = "a6058a0ce883d6e4b27adc6b93e15e01";
 
@@ -47,7 +48,11 @@ function App() {
                     </div>
                 ) : (
                     <section className="row justify-content-evenly mt-5">
-                        <CardNoticias clima={clima} />
+                        <CardClima clima={clima} />
+                        {/* <div>
+                            <h1>Mapa de {city}</h1>
+                            <Map ciudad={ciudad} lat={lat} long={long}/>
+                        </div> */}
                     </section>
                 )}
             </Container>

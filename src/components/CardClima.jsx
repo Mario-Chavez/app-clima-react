@@ -3,7 +3,7 @@ import { Button, Card, Spinner } from "react-bootstrap";
 import { ArrowRight } from "react-bootstrap-icons";
 import foto from "../assets/Image_not_available.png";
 
-const CardNoticias = ({ clima }) => {
+const CardClima = ({ clima }) => {
     console.log(clima);
 
     return (
@@ -51,4 +51,4 @@ const CardNoticias = ({ clima }) => {
     );
 };
 
-export default CardNoticias;
+export default CardClima;
