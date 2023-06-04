@@ -7,16 +7,7 @@
     flex-grow:1;
 }
 
-.formulario {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-   
-  }
-.botonFormulario {
-    box-shadow: 0 8px 12px -4px rgba(0, 0, 0, 0.75); 
-   
-  }
-  
- .formBackground{
-  background: rgb(195,226,28);
-background: radial-gradient(circle, rgba(195,226,28,0.8827906162464986) 0%, rgba(217,244,210,1) 100%);
- }
+.cardClima{
+  background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
